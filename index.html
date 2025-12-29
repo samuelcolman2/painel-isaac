@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Isaac: Billing Analytics</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      // Configure Tailwind CSS to use class-based dark mode
+      tailwind.config = {
+        darkMode: 'class',
+      }
+    </script>
+    <script src="https://cdn.sheetjs.com/xlsx-0.20.1/package/dist/xlsx.full.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        /*
+         * Custom animations to replicate tailwindcss-animate functionality
+         * since plugins are not available via CDN.
+        */
+        @keyframes zoom-in-95 {
+            from { opacity: 0; transform: scale(.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        @keyframes fade-in {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slide-in-from-bottom-4 {
+            from { transform: translateY(1rem); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .animate-in.zoom-in-95 { animation: zoom-in-95 0.3s ease-out; }
+        .animate-in.fade-in { animation: fade-in 0.3s ease-out; }
+        .animate-in.fade-in.slide-in-from-bottom-4 { animation: fade-in 0.5s ease-out, slide-in-from-bottom-4 0.5s ease-out; }
+
+        /* Custom scrollbar for Webkit browsers in dark mode */
+        .dark ::-webkit-scrollbar {
+          width: 8px;
+          height: 8px;
+        }
+        .dark ::-webkit-scrollbar-track {
+          background-color: #1e293b; /* slate-800 */
+        }
+        .dark ::-webkit-scrollbar-thumb {
+          background-color: #334155; /* slate-700 */
+          border-radius: 4px;
+        }
+        .dark ::-webkit-scrollbar-thumb:hover {
+          background-color: #475569; /* slate-600 */
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "recharts": "https://esm.sh/recharts@^3.6.0",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "@google/genai": "https://esm.sh/@google/genai@^1.34.0",
+    "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
+    "firebase/app": "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js",
+    "firebase/database": "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js",
+    "firebase/": "https://esm.sh/firebase@^12.7.0/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="bg-[#0b1120]">
+    <div id="root"></div>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>
